@@ -15,7 +15,7 @@ Pour faire du SASS, tu as besoin d'un logiciel qui tourne sur ta machine de dév
 
 Voici quelques applications (gratuites et payantes): http://sass-lang.com/install
 
-## Parcours obligatoire
+## Parcours 
 - Crée un repos `learning-sass`
 - Crée un fichier html basique `index.html`, histoire d'expérimenter avec sass.
 - Crée un dossier `assets` pour y mettre tout fichier statique composant l'aspect visuel de ton interface: images, css, javascript... et fichiers sass (se terminant par .scss). A l'intérieur de ce dossier, crée un dossier pour chaque type de 
