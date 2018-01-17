@@ -1,0 +1,48 @@
+// ---- Crée un nombre de col ---- //
+// $i: 1
+// $nombreCol: 12
+// $width: 20px
+
+// @for $i from 1 through $nombreCol 
+// 	$width: percentage($i / $nombreCol)
+// 	.col-#i
+// 		width: $width
+// 		color: yellow 
+
+
+// ---- Ces commentaires ne sont pas visibles ---- //
+// $height: 24em 
+
+// ---- Ces commentaires sont visibles ---- //
+/* $height: 24em */ 
+
+
+// ---- Test Variables / Mixins ---- //
+
+$height: 600px;
+$width: 800px;
+$color: black;
+$padding: 10px;
+
+//imports
+@import "./import/mixin.scss";
+// @import "./import/variables.scss";
+
+
+.text{
+	height: $height;
+	width: $width;
+	padding: $padding;
+	background-color: lightgrey;
+	@include border-radius (20px);
+	p {
+		color: $color;
+	} 
+
+	
+
+	
+
+
+
+} 

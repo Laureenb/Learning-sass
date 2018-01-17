@@ -1,0 +1,14 @@
+.message, .success, .error {
+  height: 50px;
+  width: 100%;
+}
+
+.success {
+  background-color: grey;
+}
+
+.error {
+  background-color: darkgrey;
+}
+
+/*# sourceMappingURL=style.css.map */

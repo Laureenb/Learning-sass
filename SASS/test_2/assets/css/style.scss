@@ -1,0 +1,14 @@
+.message {
+	height: 50px;
+	width: 100%;
+}
+
+.success {
+	@extend .message;
+	background-color: grey;
+}
+
+.error {
+	@extend .message;
+	background-color: darkgrey;
+}
