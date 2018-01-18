@@ -1,0 +1,86 @@
+@mixin rounded($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin shadow($x, $y, $blur, $color) {
+	-webkit-box-shadow: $x, $y, $blur, $color;
+	-moz-box-shadow: $x, $y, $blur, $color;
+	-o-box-shadow: $x, $y, $blur, $color;
+	box-shadow: $x, $y, $blur, $color;
+}
+
+@mixin shadow-inset($x, $y, $blur, $color) {
+	-webkit-box-shadow: inset $x, $y, $blur, $color;
+	-moz-box-shadow: inset $x, $y, $blur, $color;
+	-o-box-shadow: inset $x, $y, $blur, $color;
+	box-shadow: inset $x, $y, $blur, $color;
+}
+
+@mixin transition($proprety) {
+	-webkit-transition: $proprety .2s ease;
+	-moz-transition: $proprety .2s ease;
+	-o-transition: $proprety .2s ease;
+	transition: $proprety .2s ease;
+}
+
+@mixin box-sizing {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin linear-gradient ($from, $to) {
+	/*Couleur de secours pour les navigateurs*/
+	background-color: $to;
+	/*Mozilla Firefox*/
+	background-image: -moz-linear-gradient($from, $to);
+	/*Opera*/
+	background-image: -o-linear-gradient($from, $to);
+	/*Webkit (Chrome 11+)*/
+	background-image: -Webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+	/*Webkit (Safari 5.1+, Chrome 10+)*/
+	background-image: -webkit-linear-gradient($from, $to);
+	/*IE10*/
+	background-image: -ms-linear-gradient($from, $to);
+	/*W3C*/
+	background-image: linear-gradient($from, $to);
+}
+
+
+// ---- Retinize ---- (pour les images HiDPI//
+@mixin retinize($file, $type, $width, $height) {
+	background-image: url('../img/' + $file + '.' + $type);
+
+	@media (-webkit-min-device-pixel-ratio: 1.5),
+		   (min--moz-device-pixel-ratio: 1.5),
+		   (-o-min-device-pixel-ratio: 3/2),
+		   (min-device-pixel-ratio: 1.5),
+		   (min-resolution: 1.5dppx) {
+		& {
+			background-image: url('../img/' + $file + '-2x.' + $type);
+			-webkit-background-size: $width $height;
+			-moz-background-size: $width $height;
+			background-size: $width $height;
+		}
+	}
+}
+=>
+//utilisation ex:
+li.dribble a {
+	@include retinize('icon-dribble', 'png', 24px, 24px);
+} 
+
+// ---- Crée un nombre de col ---- //
+$i: 1
+$nombreCol: 12
+$width: 20px
+
+@for $i from 1 through $nombreCol 
+	$width: percentage($i / $nombreCol)
+	.col-#i
+		width: $width
+		color: yellow 
